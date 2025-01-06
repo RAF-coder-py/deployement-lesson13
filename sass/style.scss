@@ -7,7 +7,7 @@
 
 
 .grid-container {
-    width: 100vw;
+    width: 100vw !important;
     display: grid;
     grid: 
     "picture header" auto
@@ -18,7 +18,7 @@
     @include m.xs {
     grid: 
     "header" auto
-    "main" 1fr
+    "main" auto
     "picture" auto
     "aside" auto
     "footer" auto
