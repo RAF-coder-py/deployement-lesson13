@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text);
+  font-style: 1.6rem;
+}
+
+p {
+  margin: 1rem 0rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1rem 0 2rem 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.title-small {
+  letter-spacing: 0.5rem;
+  font-size: 1.7rem;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+}
+.title-small-none {
+  border: none;
+  letter-spacing: 0.5rem;
+  font-size: 1.7rem;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+.text-hint {
+  color: var(--hint);
+}
+
+.mx-5rem {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.mt-3 {
+  margin-top: 3rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 2rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 4rem !important;
+}
+
+@keyframes bounce {
+  0% {
+    transform: rotate(-45deg);
+  }
+  70% {
+    transform: rotate(20deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  90% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  65% {
+    transform: translateY(-4rem);
+  }
+  to {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+/* Landscape phones and down */
+/* Landscape phone to portrait tablet */
+/* Portrait tablet to landscape and desktop */
+/* Large desktop */
+.grid-container {
+  display: grid;
+  grid: "picture header" auto "aside main" 1fr "footer footer" auto/350px 1fr;
+  min-height: 100vh;
+}
+@media (max-width: 480px) {
+  .grid-container {
+    grid: "header" auto "main" 1fr "picture" auto "aside" auto "footer" auto/1fr;
+    min-height: 100vh;
+  }
+}
+
+header {
+  grid-area: header;
+  background: linear-gradient(to right, var(--primary), var(--light));
+  padding: 7rem 5rem;
+  text-align: center;
+  color: white;
+}
+header h1 {
+  font-size: 6rem;
+  line-height: 8rem;
+  font-weight: 300;
+  letter-spacing: 2.5rem;
+  animation: apparition 1s;
+}
+header p {
+  font-size: 1.7rem;
+  font-weight: 300;
+  letter-spacing: 0.5rem;
+  animation: apparition 1s;
+}
+@media (max-width: 480px) {
+  header p {
+    font-size: 2rem;
+    padding-right: 1.5rem;
+  }
+}
+header span {
+  display: inline-block;
+}
+
+.picture {
+  grid-area: picture;
+  padding: 3rem;
+  background-color: var(--background);
+  border-right: var(--border);
+}
+.picture .image {
+  background: url(../img/flicka2.jpg) center center/cover;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  margin: auto;
+  border: 1px solid #bbb;
+}
+
+.aside {
+  grid-area: aside;
+  background-color: var(--background);
+  border-right: var(--border);
+  padding: 5rem 5rem 0rem 5rem;
+}
+.aside .bloc {
+  padding: 0 0 2.5rem 0;
+}
+.aside .bloc:nth-child(3) h3 {
+  margin-top: 2.5rem;
+}
+.aside h3 {
+  margin-bottom: 0;
+  font-size: 1.8rem;
+}
+.aside p {
+  margin: 0 0 2rem 0;
+  font-style: italic;
+  font-size: 1.7rem;
+  font-weight: 100;
+}
+.aside .bar-skill {
+  background-color: #777;
+  height: 5px;
+  position: relative;
+}
+.aside .bar-skill .bar-skill-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, var(--primary), var(--light));
+  width: 85%;
+  height: 5px;
+}
+.aside .bar-skill .bar-skill-dot {
+  position: absolute;
+  background: var(--primary-hint);
+  height: 10px;
+  width: 10px;
+  top: -2.5px;
+  left: calc(85% - 5px);
+  transform: rotate(45deg);
+}
+.aside .star-container {
+  display: flex;
+}
+.aside .star-container i {
+  font-size: 2rem;
+  margin: 0 1rem 2rem 0;
+}
+.aside .social-container {
+  padding: 1rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+.aside .social-container:hover {
+  background-color: #ddd;
+}
+.aside .social-container:hover i {
+  color: var(--primary);
+  transform: scale(1.2);
+}
+.aside .social-container a {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.aside .social-container a i {
+  flex: 0 0 50px;
+  font-size: 2.2rem;
+  transition: all 0.2s;
+}
+.aside .social-container a p {
+  flex: auto;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  grid-area: main;
+}
+main h2 {
+  margin: 3rem 5rem;
+}
+main p {
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  margin-bottom: 5rem;
+}
+main .experience {
+  display: flex;
+  margin: 5rem;
+}
+main .experience p {
+  padding: 0;
+  margin: 0;
+}
+main .experience .timeline {
+  color: var(--hint);
+  padding-right: 2rem;
+  border-right: var(--border);
+  text-align: center;
+}
+main .experience .content {
+  padding: 0rem 2rem;
+}
+main .experience .content h3 {
+  margin: 0;
+  font-size: 2rem;
+}
+main .experience .content ul {
+  margin: 2rem 0;
+  list-style: circle;
+  padding-left: 3rem;
+  font-size: 1.4rem;
+}
+
+footer {
+  grid-area: footer;
+  padding: 5rem;
+  background-color: var(--text);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  footer {
+    border-bottom: 5px solid var(--text);
+  }
+}
+footer form {
+  display: flex;
+  align-items: center;
+}
+footer form .prefix {
+  font-size: 2rem;
+  background: linear-gradient(to right, var(--primary-hint), var(--light));
+  padding: 1rem 2rem;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+footer form button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+footer form button:hover {
+  opacity: 0.8;
+}
+footer form button .postfix {
+  font-size: 2rem;
+  background: linear-gradient(to right, var(--primary-hint), var(--light));
+  padding: 1rem 2rem;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
+  color: white;
+}
+footer form input {
+  outline: 0;
+  padding: 1rem 2rem;
+  min-width: 40rem;
+  line-height: 2rem;
+  border: none;
+}
+footer form input::placeholder {
+  color: var(--text);
+}
+
+/*# sourceMappingURL=style.css.map */

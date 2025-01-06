@@ -1,0 +1,12 @@
+:root {
+  --font-family: "Mulish", serif;
+  --light: #00c3ff;
+  --primary: #2071e7;
+  --primary-hint: #2980b9;
+  --text: #333;
+  --background: #fafafa;
+  --hint: #999;
+  --border: 1px solid #ddd ;
+}
+
+/*# sourceMappingURL=variables.css.map */
