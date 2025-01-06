@@ -112,13 +112,14 @@ img {
 /* Portrait tablet to landscape and desktop */
 /* Large desktop */
 .grid-container {
+  width: 100vw;
   display: grid;
   grid: "picture header" auto "aside main" 1fr "footer footer" auto/350px 1fr;
   min-height: 100vh;
 }
 @media (max-width: 480px) {
   .grid-container {
-    grid: "header" auto "main" 1fr "picture" auto "aside" auto "footer" auto/1fr;
+    grid: "header" auto "main" auto "picture" auto "aside" auto "footer" auto/1fr;
     min-height: 100vh;
   }
 }
@@ -342,6 +343,7 @@ footer form input {
 @media (max-width: 480px) {
   footer form input {
     border-radius: 0;
+    min-width: 20rem;
   }
 }
 footer form input::placeholder {

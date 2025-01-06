@@ -7,7 +7,7 @@
 
 
 .grid-container {
-    width: 100vw !important;
+    width: 100vw;
     display: grid;
     grid: 
     "picture header" auto
@@ -22,7 +22,7 @@
     "picture" auto
     "aside" auto
     "footer" auto
-    /auto;
+    /1fr;
     min-height: 100vh;
     }
 }
@@ -259,6 +259,7 @@ footer{
             border: none;
             @include m.xs {
                 border-radius: 0;
+                min-width: 20rem;
             }
 
             &::placeholder {
